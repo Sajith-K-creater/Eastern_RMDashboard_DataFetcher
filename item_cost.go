@@ -32,7 +32,7 @@ func (file item_cost) write_to_db(rows [][]string, tx *sql.Tx) error {
 		data := filter_row(row, 7)
 		if data != nil {
 			if data[2].Valid {
-				date, err := set_date_format(data[2], "02-01-2006", "2006-01-02")
+				date, err := set_date_format(data[2], "01-02-06", "2006-01-02")
 				if err != nil {
 					log.Printf("date parse error %v", err)
 					return err
@@ -70,7 +70,7 @@ func (file item_cost) write_to_db(rows [][]string, tx *sql.Tx) error {
 		//if data write to statement
 		if data != nil {
 
-			date, err := set_date_format(data[2], "02-01-2006", "2006-01-02")
+			date, err := set_date_format(data[2], "01-02-06", "2006-01-02")
 			if err != nil {
 				log.Print(err)
 				return err

@@ -26,7 +26,7 @@ func write_excel_to_db(local_directory_root_path, file_name string, tx *sql.Tx, 
 		return err
 	}
 
-	rows, err := f.GetRows("Sheet1")
+	rows, err := f.GetRows(f.GetSheetName(0))
 	if err != nil {
 		log.Print(err)
 		return err
