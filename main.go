@@ -99,6 +99,7 @@ func main() {
 		if !file.IsDir() {
 			err = move_file(remote_directory_root_path, remote_directory_processed_path, file.Name(), client)
 			if err != nil {
+				log.Printf("cannot move file: %s", err)
 				return
 			}
 		}
